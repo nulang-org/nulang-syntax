@@ -1,0 +1,21 @@
+{
+  "name": "nulang-syntax",
+  "version": "0.1.0",
+  "description": "TextMate grammar for the Nulang programming language (.nula files)",
+  "license": "Apache-2.0",
+  "files": [
+    "syntaxes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nulang-org/nulang-syntax.git"
+  },
+  "keywords": [
+    "nulang",
+    "nula",
+    "grammar",
+    "textmate",
+    "syntax",
+    "highlighting"
+  ]
+}
