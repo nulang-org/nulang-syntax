@@ -1,0 +1,76 @@
+==================
+function declaration
+==================
+
+fn add(x: Int, y: Int) -> Int {
+  x + y
+}
+
+---
+
+(source_file
+  (function_declaration
+    name: (identifier)
+    parameters: (parameter_list
+      (parameter
+        name: (identifier)
+        type: (named_type
+          (type_identifier)))
+      (parameter
+        name: (identifier)
+        type: (named_type
+          (type_identifier))))
+    return_type: (named_type
+      (type_identifier))
+    body: (block
+      (binary_expression
+        left: (identifier)
+        right: (identifier)))))
+
+==================
+effect declaration
+==================
+
+effect Rand {
+  int: -> Int
+}
+
+---
+
+(source_file
+  (effect_declaration
+    name: (type_identifier)
+    (effect_operation
+      name: (identifier)
+      return_type: (named_type
+        (type_identifier)))))
+
+==================
+actor declaration
+==================
+
+actor Counter {
+  state durable count: Int = 0
+  behavior inc() { count = count + 1 }
+}
+
+---
+
+(source_file
+  (actor_declaration
+    name: (type_identifier)
+    (state_field
+      model: (state_model)
+      name: (identifier)
+      type: (named_type
+        (type_identifier))
+      value: (integer_literal))
+    (behavior_declaration
+      name: (identifier)
+      parameters: (parameter_list)
+      body: (block
+        (assignment_expression
+          left: (identifier)
+          right: (binary_expression
+            left: (identifier)
+            right: (integer_literal)))))))
