@@ -1,11 +1,23 @@
 {
   "name": "nulang-syntax",
   "version": "0.1.0",
-  "description": "TextMate grammar for the Nulang programming language (.nula files)",
+  "description": "TextMate and Tree-sitter grammars for the Nulang programming language (.nula files)",
   "license": "Apache-2.0",
   "files": [
-    "syntaxes"
+    "syntaxes",
+    "grammar.js",
+    "tree-sitter.json",
+    "queries",
+    "src"
   ],
+  "scripts": {
+    "generate:tree-sitter": "tree-sitter generate",
+    "test:tree-sitter": "tree-sitter generate && tree-sitter test",
+    "test": "npm run test:tree-sitter"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "0.27.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nulang-org/nulang-syntax.git"
@@ -14,6 +26,7 @@
     "nulang",
     "nula",
     "grammar",
+    "tree-sitter",
     "textmate",
     "syntax",
     "highlighting"
